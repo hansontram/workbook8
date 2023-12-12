@@ -48,7 +48,27 @@ function displayRow(items) {
     editCell.appendChild(deleteButton)
 
 
+    deleteButton.addEventListener("click", () => {
+    
+       const isDeleteConfirmed = confirm(`You are about to delete ${item.name}, do you want to continue?`)
+       if(isDeleteConfirmed)
+       {
+           categoriesService.delete(item.id)
+               .then(() => {
+                   // delete the row
+                   categoryRows.removeChild(row)
+               })
+       }
+    })
+    
+    editButton.addEventListener("click", () => {
+        // TODO: Fix this
+       location.href = `/${baseUrl}/todos/?id=${items.id}`
+       console.log(location.href )
+    })
 }
+ // delete and edit functions
+
 
 function addNewClick() {
     location.href = "/new-todo.html"

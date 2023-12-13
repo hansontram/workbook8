@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="./scripts/index.js"></script>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">Enter Your Information</h2>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label>Are you a:</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="userType" id="student" value="student">
+                    <label class="form-check-label" for="student">Student</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="userType" id="instructor" value="instructor">
+                    <label class="form-check-label" for="instructor">Instructor</label>
+                </div>
+            </div>
+
+            <button type="button" id="saveUserName" class="btn btn-primary btn-lg">Enter</button>
+
+        </form>
+    </div>
+
+    <!-- Bootstrap JS scripts (for modal functionality) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

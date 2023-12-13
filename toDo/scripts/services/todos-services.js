@@ -23,4 +23,26 @@ class TodoService {
 
     return fetch(this.baseUrl, requestInfo).then((response) => response.json());
   }
+  // PUT
+  async update(items) {
+    let url = `${this.baseUrl}/${items.id}`;
+
+    const requestInfo = {
+      method: "PUT",
+      body: JSON.stringify(items),
+      headers: { "Content-type": "application/json;charset=UTF-8" },
+    };
+
+    return fetch(url, requestInfo).then((response) => response.json());
+  }
+  
+  // Delete
+  async delete(id) {
+    let url = `${this.baseUrl}/${id}`;
+    const requestInfo = {
+      method: "DELETE",
+    };
+
+    return fetch(url, requestInfo);
+  }
 }

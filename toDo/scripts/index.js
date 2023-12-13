@@ -50,21 +50,20 @@ function displayRow(items) {
 
     deleteButton.addEventListener("click", () => {
     
-       const isDeleteConfirmed = confirm(`You are about to delete ${item.name}, do you want to continue?`)
+       const isDeleteConfirmed = confirm(`Are you sure you want to delete "${items.title}" ?`)
        if(isDeleteConfirmed)
        {
-           categoriesService.delete(item.id)
+           todoService.delete(items.id)
                .then(() => {
                    // delete the row
-                   categoryRows.removeChild(row)
+                   itemRows.removeChild(row)
                })
        }
     })
     
     editButton.addEventListener("click", () => {
-        // TODO: Fix this
-       location.href = `/${baseUrl}/todos/?id=${items.id}`
-       console.log(location.href )
+        location.href = `../edit-todo.html?id=${items.id}`
+       
     })
 }
  // delete and edit functions
